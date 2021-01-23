@@ -1,7 +1,7 @@
 import "Person.js";
 
-class BoEn(name, color) extends Person{
-  constructor(){
+class BoEn extends Person{
+  constructor(name, color){
     super(name, color);
   }
 }
