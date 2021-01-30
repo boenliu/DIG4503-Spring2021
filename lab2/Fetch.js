@@ -9,7 +9,7 @@ class Fetch {
     this.clr = color;
   }
 
-  // this method was used for debugging. I wasn't able to call this.clr in line 27. However, I was able to call this.clr outside of the "axios .then function"
+  // this method was used for debugging. I wasn't able to call this.clr in line 28. However, I was able to call this.clr outside of the "axios .then function"
   repeatAfterMe(){
     console.info(chalk.hex(this.clr)("repeatAfterMe"));
   }
