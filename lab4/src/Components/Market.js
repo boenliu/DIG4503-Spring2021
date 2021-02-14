@@ -1,40 +1,40 @@
 import React from 'react';
 import MarketItem from './MarketItem.js'
 
-// class Market
 class Market extends React.Component{
-  // constructor so that we can use "this" and properties.
   constructor(props) {
     super(props);
-
-    // creates an array for items in the state property(attribute? I apologize, it's late, my comments probably don't make any sense)
+    // a state with an empty array
     this.state = {
       items: []
     };
   }
 
-  // the render method that renders html when called by App.js
+  // this clones the array, adds a new marketItem, then returns a new array.
+  addItem(list){
+    // i'm not sure if this is an assignment or just linking it to this.state.item
+    let li = list;
+    // uses push to add new array element
+    li.push(<MarketItem count={li.count} key={li.key} />);
+    return li;
+  }
+
   render(){
     return(
       <div>
-
-        // a button that allows the user to add items to the items array.
+        // a button that will call addItem() to add a new element to the array.
         <button onClick={() => {
+          this.setState({items: this.addItem(this.state.items)});
 
-          // this is the bane of my existance. please end my suffering. I'm 300% sure this is wrong and why my app isn't working.
-          this.setState({items: [MarketItem(this.state.items)]})
-
-        // this is a button that says "I am a button"
+          // i used the next line to test if line
+          // console.log(this.state.items.map(item => item));
         }}>I am a button</button>
 
-        // this is my poor attempt at trying to make something appear on the site. It didn't work.
-        {this.state.items.map(x => x)}
+        // this line doesn't work like intended. It's supposed to display a list of all the items in the items array. it doesn't update after every button press.
+        <p>{this.state.items.map(item => item)}</p>
       </div>
     );
   }
 }
 
 export default Market;
-
-
-// I sent you an email, hopefully you've already read it. I understand I'm not going to get full credit for this lab, but please explain what I'm doing wrong.
