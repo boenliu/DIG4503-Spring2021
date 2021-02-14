@@ -3,10 +3,9 @@ import './App.css';
 import Market from './Components/Market.js'
 
 function App() {
-  // makes a new Market so that i can render it.
+  // creates a new Market
   let mk = new Market();
-
-  // renders the new Market
+  // renders a the webapp
   return mk.render();
 }
 
