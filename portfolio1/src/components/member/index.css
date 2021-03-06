@@ -1,0 +1,7 @@
+.member{
+  font-size: 30px;
+  background: rgba(91, 130, 140, .5);
+  border-style: groove;
+  border-radius: 5px;
+  text-align: center;
+}
